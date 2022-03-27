@@ -16,12 +16,7 @@
     "prettier:fix": "prettier --write '**/*.{ts,js,json}'",
     "prettier:check": "prettier --check '**/*.{ts,js,json}'",
     "prepare": "husky install",
-    "lint-staged": {
-      "./*.{ts,js,json}": [
-        "yarn prettier:fix",
-        "yarn lint"
-      ]
-    }
+    "lint-staged":"yarn prettier:fix && yarn lint"
   },
   "dependencies": {
     "next": "latest",
