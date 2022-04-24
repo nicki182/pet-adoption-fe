@@ -1,5 +1,5 @@
-import Constants from "./constants"
+import Constants from './constants';
 export default {
-    [Constants.SUBMIT]: 'Submit',
-    [Constants.CANCEL]: 'Cancel',
-}
+  [Constants.SUBMIT]: 'Submit',
+  [Constants.CANCEL]: 'Cancel',
+};

@@ -1,4 +1,4 @@
 export default {
-    SUBMIT: 'SUBMIT',
-    CANCEL: 'CANCEL',
-}
+  SUBMIT: 'SUBMIT',
+  CANCEL: 'CANCEL',
+};

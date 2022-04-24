@@ -6,12 +6,12 @@ import fontFamilies from './fontFamilies';
 import grid from './grid';
 import flex from './flex';
 const theme = {
-    colors,
-    sizes,
-    spacing,
-    extras,
-    fontFamilies,
-    grid,
-    flex
-}
+  colors,
+  sizes,
+  spacing,
+  extras,
+  fontFamilies,
+  grid,
+  flex,
+};
 export default theme;

@@ -1,4 +1,4 @@
-import us from "./us"
+import us from './us';
 export default {
-    us
-}
+  us,
+};
