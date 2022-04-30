@@ -15,7 +15,7 @@ const schema = yup.object().shape({
     name: yup.string().required('Name is required'),
 })
 const Template: ComponentStory<typeof TemplateForm> = (args) =>(
-    <Form schema={schema} onSubmit={async ()=>{console.log('submit')}}>
+    <Form schema={schema} onSubmit={async ()=>{}}>
 <TemplateForm {...args} >
     <ControllerForm name="name"
     render={
@@ -31,7 +31,7 @@ const Template: ComponentStory<typeof TemplateForm> = (args) =>(
 export const GenericForm = Template.bind({});
 GenericForm.args = {
     buttons:{
-        cancel:<CancelButton onClick={async ()=>console.log('onCancel')}/>,
+        cancel:<CancelButton onClick={async ()=>{}}/>,
         submit:<SubmitButton/>   
     }     
 }

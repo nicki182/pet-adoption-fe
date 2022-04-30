@@ -8,7 +8,6 @@ type Props = Omit<GenericButtonProps, 'variant' | 'type'| 'disabled' | 'children
 const SubmitButton:FC<Props> = ({...props}) => {
     const {translate} = useTranslate();
     const { formState:{errors,isSubmitting,isDirty}} = useFormContext();
-    console.log(errors,'submit',isSubmitting,isDirty)
     const handleDisabled = () => !isEmpty(errors) || isSubmitting || !isDirty
     return (<>
         <PrimaryButton disabled={handleDisabled()} type="submit" {...props}>

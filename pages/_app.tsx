@@ -1,7 +1,8 @@
 import theme from '../theme'
 import type { AppProps } from 'next/app'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-
+import NavBar from '../components/generic/wizards/NavBar'
+import {navPublic} from '../constants'
 const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family:Title
@@ -22,6 +23,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
+        <NavBar items={navPublic}/>
         <Component {...pageProps} />
       </ThemeProvider>
     </>

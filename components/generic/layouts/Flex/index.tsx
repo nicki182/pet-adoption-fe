@@ -5,6 +5,8 @@ interface FlexProps {
     wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
     align?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'stretch';
     gap?: 'small' | 'medium' | 'big' | 'auto';
+    width?: string;
+    heigth?:string
 }
 const Flex = styled.div<FlexProps>`
     display: flex;
@@ -13,7 +15,7 @@ const Flex = styled.div<FlexProps>`
     align-items: ${({ align = 'center' }) => align};
     flex-wrap: ${({ wrap = 'nowrap' }) => wrap};
     gap: ${({ gap = 'auto',theme }) =>theme.flex.gap[gap]};
-    width:100%;
-    height:100%;
+    width:${({width})=>width || '100%'};
+    height:${({heigth})=>heigth || '100%'};
 `
 export default Flex;

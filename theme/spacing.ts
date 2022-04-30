@@ -10,6 +10,11 @@ const spacing = {
       medium: '1rem',
       big: '1.5rem',
     },
+    allRound: {
+      small: '0.5rem',
+      medium: '1rem',
+      big: '1.5rem',
+    },
   },
   margin: {
     x: {
@@ -18,6 +23,11 @@ const spacing = {
       big: '1.5rem',
     },
     y: {
+      small: '0.5rem',
+      medium: '1rem',
+      big: '1.5rem',
+    },
+    allRound: {
       small: '0.5rem',
       medium: '1rem',
       big: '1.5rem',

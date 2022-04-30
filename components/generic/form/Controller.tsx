@@ -5,13 +5,11 @@ interface Props{
     render:ReactElement;
 }
 const ControllerForm:FC<Props> = ({ name, render }) => {
-  const { control,getValues, formState:{errors} } = useFormContext();
-  console.log(errors,'controller',getValues('name'))
+  const { control, formState:{errors} } = useFormContext();
   return (
     <Controller
       control={control}
       render={({ field:{onChange,ref,value,onBlur} }) =>{
-        console.log(ref)
         return cloneElement(render, { error: errors && errors[name]?errors[name].message:null, onChange,inputRef:ref,value,onBlur })
         }}
       name={name}

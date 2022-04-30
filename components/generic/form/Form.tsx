@@ -3,7 +3,7 @@ import { useForm, FormProvider,UseFormProps } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { AnyObjectSchema } from 'yup';
 type Configuration = Omit<UseFormProps, 'defaultValues' | 'resolver'>
-interface Props {
+export interface Props {
     schema: AnyObjectSchema;
     onSubmit: (values: unknown) => Promise<unknown | void>;
     resetValues?: unknown;

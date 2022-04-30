@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Modal from '.'
 export default {
-  title: 'Generic/Modal',
+  title: 'Generic/Wizard/Modal',
   component: Modal,
 } as ComponentMeta<typeof Modal>;
 const Template: ComponentStory<typeof Modal> = (args) =>(
@@ -16,5 +16,5 @@ const Template: ComponentStory<typeof Modal> = (args) =>(
 export const GenericModal = Template.bind({});
 GenericModal.args = {
     open:true,
-    onClose:async ()=>console.log('onClose')
+    onClose:async ()=>{}
 }

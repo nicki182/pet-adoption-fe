@@ -31,6 +31,14 @@ const sizes = {
       width: '30rem',
       height: '30rem',
     },
+    80: {
+      width: '80%',
+      height: '100%',
+    },
+    50: {
+      width: '50%',
+      height: '100%',
+    },
   },
   button: {
     default: {
@@ -67,6 +75,9 @@ const sizes = {
       width: '30rem',
       height: '3rem',
     },
+  },
+  maxWidth: {
+    desktop: '1280px',
   },
 };
 export default sizes;
