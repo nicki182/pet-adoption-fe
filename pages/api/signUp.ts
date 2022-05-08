@@ -7,7 +7,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Session>
 ) {
-  const session = await requestFromServer('post', 'session/signup', req.body);
-  setCookie;
+  const session = await requestFromServer('post', 'auth/signup', {data:req.body});
+  setCookie(res,'token',session);
   return res.json(session);
 }

@@ -18,14 +18,12 @@ const ModalStyled = styled(ReactModal)`
         top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
     }
     &.ReactModal__Content--after-open {
         position: absolute;
-  top: 25%;
-  left: 25%;
-  right: 25%;
-  bottom: 25%;
+        top: 25%;
+        left: 25%;
+        right: 25%;  
   background-color: #fefdfd;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);

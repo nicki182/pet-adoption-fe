@@ -10,7 +10,17 @@ interface Props {
 }
 const schema = yup.object().shape({
     password:yup.string().required('This is Required'),
-    name:yup.string().required('This is Required')
+    email:yup.string().email().required('This is Requires').typeError('Must be an  email'),
+    name:yup.string().required('This is Required'),
+    matchPassword:yup.string().required('This is required'),
+    phoneNumber:yup.string().required('This is Required'),
+}).test((obj)=>{
+    if(obj && 
+        obj.password && 
+        obj.matchPassword && 
+        (obj.matchPassword !== obj.password)) 
+    return new yup.ValidationError('password is not matching with check password', null,'matchPassword')
+    return true
 })
 const RegisterForm:FC<Props> = ({templateFormProps,onSubmit}) =>{
     return <Form schema={schema} onSubmit={onSubmit}>
@@ -20,10 +30,28 @@ const RegisterForm:FC<Props> = ({templateFormProps,onSubmit}) =>{
         <TemplateInput.Input 
             label='Name'
             inputElement={<Input/>}/>}/>
-            <ControllerForm name="password"
+            <ControllerForm name="email"
         render={
         <TemplateInput.Input 
+            label='Email'
+            inputElement={<Input/>}/>}/>
+            <ControllerForm 
+            name="password"
+            render={
+        <TemplateInput.Input 
             label='Password'
+            inputElement={<Input type='password'/>}/>}/>
+             <ControllerForm
+             name="matchPassword"
+             render={
+        <TemplateInput.Input 
+            label='Check Password'
+            inputElement={<Input type='password'/>}/>}/>
+            <ControllerForm 
+        name="phoneNumber"
+        render={
+        <TemplateInput.Input 
+            label='Phone Number'
             inputElement={<Input/>}/>}/>
     </TemplateForm>
     </Form>
