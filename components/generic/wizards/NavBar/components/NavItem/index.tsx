@@ -11,9 +11,7 @@ const NavItem = styled.a`
     width:10rem;
     text-align:center;
     &:hover{
-        background-color:${({theme})=>theme.colors.primary};
-        color:${({theme})=>theme.colors.text};
-        border-radius:${({theme})=>theme.extras.borderRadius.small};
+        color:${({theme})=>theme.colors.textColors.highlight};
         cursor:pointer;
     }
     `

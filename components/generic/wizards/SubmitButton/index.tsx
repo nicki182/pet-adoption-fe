@@ -4,6 +4,7 @@ import {isEmpty} from 'lodash'
 import useTranslate from '../../../../hooks/useTranslate';
 import {useFormContext} from 'react-hook-form'
 import { GenericButtonProps } from '@components/generic/buttons/interfaces';
+import Loading from '@components/generic/Loading';
 type Props = Omit<GenericButtonProps, 'variant' | 'type'| 'disabled' | 'children'>;
 const SubmitButton:FC<Props> = ({...props}) => {
     const {translate} = useTranslate();
@@ -12,7 +13,7 @@ const SubmitButton:FC<Props> = ({...props}) => {
     return (<>
         <PrimaryButton disabled={handleDisabled()} type="submit" {...props}>
         {/*TODO: CHANGE WITH ICON ANIMATION*/}
-        {isSubmitting ? 'Loading...' :translate('SUBMIT')} 
+        {isSubmitting ? <Loading/> :translate('SUBMIT')} 
         </PrimaryButton>
     </>)
 }

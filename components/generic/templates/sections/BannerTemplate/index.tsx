@@ -15,7 +15,17 @@ const BannerTemplate:FC<Props> = ({image,elements}) => {
         <Box position="relative" noBoxShadow={true} width='100%' height="100vh">
             {image}
             {map(elements,(element,index)=>{
-          return <Box key={index} noBoxShadow={true} position={"absolute"} backgroundColor={'transparent'} left={element.position.left} bottom={element.position.bottom} right={element.position.right} top={element.position.top}>
+          return <Box 
+          key={index} 
+          noBoxShadow={true}
+           position={"absolute"}
+           height="auto"
+              width="auto"
+            backgroundColor={'transparent'} 
+            left={element.position.left} 
+            bottom={element.position.bottom}
+             right={element.position.right} 
+             top={element.position.top}>
               {element.content}
               </Box>  
         })

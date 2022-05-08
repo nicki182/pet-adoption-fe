@@ -7,7 +7,7 @@ interface Props {
 }
 const NavitagationTemplate:FC<Props> = ({leftButtons,rightButtons}) => {
     return(<Flex direction="row">
-        <Flex direction="row" justify="flex-start">
+        <Flex direction="row" justify="flex-start" gap='medium'>
     {leftButtons.map((button,index)=>{
         return cloneElement(button,{key:index})
     })}

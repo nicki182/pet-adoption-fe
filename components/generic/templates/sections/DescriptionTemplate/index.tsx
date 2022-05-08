@@ -1,8 +1,7 @@
-import {FC} from 'react';
-import Typography from "@components/generic/text/Typography"
-import Inner from "@components/generic/layouts/Inner"
-import  Flex  from '@components/generic/layouts/Flex';
-import {TextColorType} from "@components/generic/text/interfaces"
+import Flex from '@components/generic/layouts/Flex';
+import { TextColorType } from "@components/generic/text/interfaces";
+import Typography from "@components/generic/text/Typography";
+import { FC } from 'react';
 interface Props {
     description: string;
     title: string;
@@ -11,8 +10,8 @@ interface Props {
 }
 const DescriptionTemplate:FC<Props> = ({ description,title,colorTitle, colorDescription }) => {
     return(<>
-        <Flex direction="column" gap='medium'>
-    <Typography isTitle={true} color={colorTitle} element={'h3'}>
+        <Flex direction="column" justify='flex-start' gap='medium'>
+    <Typography isTitle={true} color={colorTitle} fontSize='huge' element={'h1'}>
         {title}
     </Typography>
     <Typography color={colorDescription} element={'p'}>

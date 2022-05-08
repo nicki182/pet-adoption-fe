@@ -1,6 +1,7 @@
 import { addDecorator } from '@storybook/react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import theme from '../theme/index';
+import * as NextImage from 'next/image';
 const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family:Title
@@ -25,3 +26,11 @@ export const parameters = {
     },
   },
 };
+const OriginalNextImage = NextImage.default;
+
+Object.defineProperty(NextImage, 'default', {
+  configurable: true,
+  value: (props) => (
+    <OriginalNextImage {...props} unoptimized loader={({ src }) => src} />
+  ),
+});

@@ -1,11 +1,10 @@
-import { useState } from 'react';
-import { LenguageType } from '../components/generic/interfaces';
 import Langs from '@langs/index';
+import parse from 'html-react-parser';
+import useGetLenguage from './useGetLenguage';
 const useTranslate = () => {
-  //TODO: Add useGetLenguage
-  const [language, setLanguage] = useState<LenguageType>('us');
+  const {language} =useGetLenguage() 
   const translate = (key: string) => {
-    return Langs[language][key];
+    return parse(Langs[language][key]);
   };
   return {
     translate,

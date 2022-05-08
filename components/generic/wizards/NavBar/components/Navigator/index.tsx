@@ -11,7 +11,7 @@ interface Props {
 }
 const Navigator:FC<Props> = ({rightButtonsSection,leftButtonsSection}) => {
     return (
-        <Box width="100%" height='4rem'>
+        <Box width="100%"noBoxShadow={true} height='4rem'>
             <Flex>
             <Inner isMaxWidthView>
                 <NavitagationTemplate

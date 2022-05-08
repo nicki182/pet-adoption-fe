@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import LoginRegister from '@components/LoginRegister';
 const navPublic = [
     {
         href: '/',
@@ -14,7 +14,7 @@ const navPublic = [
     },
     {
         isLink: false,
-        children:<>Login/Register</>,
+        children:<LoginRegister/>,
         isLeft:false
     }
 ]

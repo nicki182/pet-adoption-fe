@@ -11,7 +11,8 @@ const sizes = {
     default: '1rem',
     small: '0.875rem',
     medium: '1rem',
-    large: '1.125rem',
+    big: '1.5rem',
+    huge: '3rem',
   },
   //TODO:check sizes
   box: {

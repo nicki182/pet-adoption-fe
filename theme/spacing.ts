@@ -4,11 +4,13 @@ const spacing = {
       small: '0.5rem',
       medium: '1rem',
       big: '1.5rem',
+      none: '0',
     },
     y: {
       small: '0.5rem',
       medium: '1rem',
       big: '1.5rem',
+      none: '0',
     },
     allRound: {
       small: '0.5rem',
@@ -21,11 +23,13 @@ const spacing = {
       small: '0.5rem',
       medium: '1rem',
       big: '1.5rem',
+      none: '0',
     },
     y: {
       small: '0.5rem',
       medium: '1rem',
       big: '1.5rem',
+      none: '0',
     },
     allRound: {
       small: '0.5rem',

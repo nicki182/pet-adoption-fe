@@ -22,7 +22,8 @@
       "@langs/*": ["langs/*"],
       "@assets/*": ["assets/*"],
       "@hooks/*": ["hooks/*"],
-      "@interfaces": ["interfaces"]
+      "@interfaces": ["interfaces"],
+      "@utils":["utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types.d.ts"],
