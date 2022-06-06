@@ -1,9 +1,10 @@
+import { SizeTypes } from "@components/generic/interfaces";
 import styled from "styled-components";
 interface Props {
-    paddingX?: 'small' | 'medium' | 'big'  ;
-    marginX?: 'small' | 'medium' | 'big';
-    paddingY?: 'small' | 'medium' | 'big';
-    marginY?: 'small' | 'medium' | 'big';
+    paddingX?: SizeTypes  ;
+    marginX?:SizeTypes;
+    paddingY?: SizeTypes;
+    marginY?: SizeTypes;
     isMaxWidthView?:boolean;
 }
 const Inner = styled.div<Props>`

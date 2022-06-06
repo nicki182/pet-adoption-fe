@@ -10,21 +10,21 @@ interface Props {
 }
 const schema = yup.object().shape({
     password:yup.string().required('This is Required'),
-    name:yup.string().required('This is Required')
+    email:yup.string().email('This is not a valid email').required('This is Required'),
 })
 const LoginForm:FC<Props> = ({templateFormProps,onSubmit}) =>{
     return <Form schema={schema} onSubmit={onSubmit}>
     <TemplateForm {...templateFormProps} >
-        <ControllerForm name="name"
+        <ControllerForm name="email"
         render={
         <TemplateInput.Input 
-            label='Name'
+            label='email'
             inputElement={<Input/>}/>}/>
             <ControllerForm name="password"
         render={
         <TemplateInput.Input 
             label='Password'
-            inputElement={<Input />}/>}/>
+            inputElement={<Input type='password'/>}/>}/>
     </TemplateForm>
     </Form>
 }

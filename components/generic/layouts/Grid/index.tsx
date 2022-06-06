@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-interface Props {
+export interface Props {
     rows:1|2|3|4|5|6| 'auto';
     cols:1|2|3|4|5|6|'auto';
     gap: 'small' | 'medium' | 'big';

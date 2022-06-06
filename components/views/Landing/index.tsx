@@ -1,4 +1,4 @@
-import LandingTemplate from "@components/templates/LandingTemplate"
+import LandingTemplate from "@components/custom/templates/views/LandingTemplate"
 import Banner from "./components/Banner"
 import About from "./components/About"
 const Landing = () => {

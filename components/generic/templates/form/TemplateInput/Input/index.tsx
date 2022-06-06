@@ -18,7 +18,7 @@ const Input:FC<Props> =({error,label,inputElement,inputRef,...props}) => {
         <Flex direction='column'>
         <Flex direction='column' gap='small'>
         {cloneElement(inputElement,{...props,isError:!!error,ref:inputRef})}
-        {<ErrorMessage show={error!}>{error || 'This field is Required'}</ErrorMessage>}
+        {<ErrorMessage show={error!!!}>{error || 'This field is Required'}</ErrorMessage>}
         </Flex>
         </Flex>
     </Grid>

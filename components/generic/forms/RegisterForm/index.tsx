@@ -10,7 +10,7 @@ interface Props {
 }
 const schema = yup.object().shape({
     password:yup.string().required('This is Required'),
-    email:yup.string().email().required('This is Requires').typeError('Must be an  email'),
+    email:yup.string().email('Must be a valid email').required('This is Requires'),
     name:yup.string().required('This is Required'),
     matchPassword:yup.string().required('This is required'),
     phoneNumber:yup.string().required('This is Required'),

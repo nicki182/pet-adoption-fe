@@ -4,7 +4,8 @@ export type SizeTypes =
   | 'big'
   | 'default'
   | 'none'
-  | 'huge';
+  | 'huge'
+  | 'xlSmall';
 export type LenguageType = 'us';
 export interface Position {
   top: string;

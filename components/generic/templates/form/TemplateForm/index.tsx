@@ -1,6 +1,6 @@
 
 import Flex from '@components/generic/layouts/Flex';
-import TemplateButtons from '../TemplateButtons/index';
+import TemplateButtons from '../../sections/TemplateButtons/index';
 export interface Props {
     children: React.ReactNode;
     buttons:{cancel?:React.ReactNode,submit?:React.ReactNode};

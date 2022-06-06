@@ -1,7 +1,7 @@
 import PrimaryButton from "@components/generic/buttons/Primary"
 import { FC } from 'react';
 import {isEmpty} from 'lodash'
-import useTranslate from '../../../../hooks/useTranslate';
+import useTranslate from '@hooks/generic/useTranslate';
 import {useFormContext} from 'react-hook-form'
 import { GenericButtonProps } from '@components/generic/buttons/interfaces';
 import Loading from '@components/generic/Loading';

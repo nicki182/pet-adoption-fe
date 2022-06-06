@@ -1,8 +1,8 @@
 import  styled  from 'styled-components';
-import { GenericInputProps } from '../interfaces';
+import { InputProps } from '../interfaces';
 const Input = styled.input.attrs(props => ({
     type: props.type || 'text'
-  }))<GenericInputProps>`
+  }))<InputProps>`
 border:none;  
 outline: ${({isError,theme})=>isError?`2px solid ${theme.colors.danger} `:'none'};
 border-radius: 4px;

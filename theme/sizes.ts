@@ -54,6 +54,10 @@ const sizes = {
       width: '20rem',
       height: '2rem',
     },
+    xlSmall:{
+      width: '10rem',
+      height: '2rem',
+    },
     medium: {
       width: '30rem',
       height: '3rem',

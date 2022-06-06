@@ -6,12 +6,11 @@ export default {
 } as ComponentMeta<typeof Box>;
 const Template: ComponentStory<typeof Box> = (args) =>(
     <div style={{width:'500px',height:'500px'}}>
-<Box {...args} >
+    <Box {...args} >
     HELLO INSIDE BOX
-</Box>
-</div>
-)
-;
+    </Box>
+    </div>
+);
 
 export const GenericBox = Template.bind({});
 GenericBox.args = {

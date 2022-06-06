@@ -5,6 +5,14 @@ const TypographyComponent:FC<TypographyProps> = ({element,...props})=>{
     return createElement(element,{...props})
 }
 const Typography = styled(TypographyComponent)<TypographyProps>`
+    margin-block-start:0;
+    margin-block-end:0;
+    margin-inline-start:0;
+    margin-inline-end:0;
+    padding-inline-start:0;
+    padding-inline-end:0;
+    padding-block-start:0;
+    padding-block-end:0;
     color: ${({ color, theme }) => theme.colors.textColors[color || 'default']};
     font-size: ${({ fontSize, theme,element }) =>theme.sizes.fontSizes[fontSize || element]};
     font-family: ${({ theme,isTitle }) => theme.fontFamilies[isTitle ? 'Title' : 'Text']};

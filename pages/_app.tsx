@@ -1,59 +1,45 @@
-import theme from '../theme'
+import Footer from '@components/custom/Footer'
+import useAuthentication from '@hooks/generic/useAuthentication'
 import type { AppProps } from 'next/app'
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import NavBar from '../components/generic/wizards/NavBar'
-import {navPublic} from '../constants'
-const GlobalStyle = createGlobalStyle`
-@font-face {
-  font-family:Title
-  src: url('https://fonts.googleapis.com/css2?family=Akshar&display=swap');
-}
-@font-face {
-  font-family:Text
-  src: url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300&display=swap');
-}
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    background: url('/background.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  ::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	background-color: #F5F5F5;
-	border-radius: 10px;
-}
-  
-::-webkit-scrollbar
-{
-	width: 10px;
-	background-color: #C2C2C2;
-}
-::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	background-color: #C2C2C2;
-}
-`
-
+import UserIdleModal from '@components/custom/modals/UserIdleModal'
+import { Provider } from 'react-redux'
+import { persistStore } from 'redux-persist'
+import { PersistGate } from 'redux-persist/integration/react'
+import { ThemeProvider } from 'styled-components'
+import GlobalStyle from 'theme/globalStyle'
+import NavBar from '@components/generic/wizards/NavBar'
+import { navPublic } from '../constants'
+import useStore from '../redux/store'
+import theme from '../theme'
+import useUserInteractionTracker from '../hooks/generic/useUserInteractionTracker';
+import { useState } from 'react';
 export default function MyApp({ Component, pageProps }: AppProps) {
+  const store = useStore(pageProps.initialReduxState)
+  const [open, setOpen] = useState<boolean>(false)
+  const auth = useAuthentication((pageProps.initialReduxState || {}).user,(pageProps.initialReduxState || {}).session)
+  const checkIfIsActive =async (isActive:boolean)=>{
+    setOpen(!isActive && auth.isAuthenticated)
+  }
+  const {isActive} = useUserInteractionTracker('10s',checkIfIsActive)
+  // useEffect(()=>{
+  //   console.log('isActive',isActive)
+  // },[isActive])
+  const persistor = persistStore(store, {}, function () {
+    persistor.persist()
+  })
   return (
     <>
       <GlobalStyle />
+      <Provider store={store}>
+      <PersistGate loading={<div>loading...</div>} persistor={persistor}>
       <ThemeProvider theme={theme}>
         <NavBar items={navPublic}/>
         <Component {...pageProps} />
-        {/* TODO: <Footer /> */}
-        <footer>
-          <p>
-            pet adoption of nicole strulavits
-          </p>
-        </footer>
+       <Footer/>
+       <UserIdleModal open={open} onClose={()=>setOpen(false)} />
       </ThemeProvider>
+      </PersistGate>
+      </Provider>
     </>
   )
 }

@@ -1,6 +1,6 @@
 import SecondaryButton from "@components/generic/buttons/Secondary"
 import { FC } from 'react';
-import useTranslate from '../../../../hooks/useTranslate';
+import useTranslate from '@hooks/generic/useTranslate';
 import { GenericButtonProps } from '@components/generic/buttons/interfaces';
 interface Props extends Omit<GenericButtonProps,'type' |'variant'| 'children' | 'onClick'>{
     onClick: () =>Promise<unknown | void>;
