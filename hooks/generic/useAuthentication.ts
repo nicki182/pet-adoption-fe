@@ -5,18 +5,15 @@ import { useEffect, useMemo } from 'react';
 import { includes } from 'lodash';
 import { useSelector } from 'react-redux';
 const useAuthentication = () => {
-  const session = useSelector(state=>state.session)
+  const session = useSelector((state) => state.session);
   const router = useRouter();
   useEffect(() => {
-    console.log(session)
-  },[session])
-  const isAuthenticated = useMemo(
-    (): boolean =>{
-      console.log(session,'session')
-      return session && !!session.accessToken
-    },
-    [session]
-  );
+    console.log(session);
+  }, [session]);
+  const isAuthenticated = useMemo((): boolean => {
+    console.log(session, 'session');
+    return session && !!session.accessToken;
+  }, [session]);
   const isAdmin = useMemo(
     () => session && session.role === Role.Admin,
     [session]

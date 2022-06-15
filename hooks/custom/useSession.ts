@@ -33,7 +33,7 @@ const useSession = () => {
       mode: 'cors', // no-cors, *cors, same-origin
       cache: 'no-cache',
     });
-    console.log('aca estoy',response)
+    console.log('aca estoy', response);
     dispatch(addSession(response));
     router.replace('/auth/petList');
   };

@@ -19,10 +19,6 @@ import client from '../graphQL';
 export default function MyApp({ Component, pageProps }: AppProps) {
   const store = useStore(pageProps.initialReduxState)
   const [open, setOpen] = useState<boolean>(false)
-  const checkIfIsActive =async (isActive:boolean)=>{
-    setOpen(!isActive && auth.isAuthenticated)
-  }
-  const {isActive} = useUserInteractionTracker('5m',checkIfIsActive)
   // useEffect(()=>{
   //   console.log('isActive',isActive)
   // },[isActive])
@@ -40,7 +36,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
         </Auth>
        <Footer/>
-       <UserIdleModal open={open} onClose={()=>setOpen(false)} />
       </ThemeProvider>
       </PersistGate>
       </Provider>
