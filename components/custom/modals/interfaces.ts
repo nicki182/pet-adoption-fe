@@ -1,4 +1,4 @@
 export interface GenericModalProps {
-    onClose: () => void;
-    open: boolean;
+  onClose: () => void;
+  open: boolean;
 }

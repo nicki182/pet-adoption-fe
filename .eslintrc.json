@@ -18,7 +18,7 @@
       "extends": ["plugin:testing-library/react"]
     },
     {
-      "extends": ["plugin:storybook/recommended"],
+      "extends": ["plugin:storybook/recommended", "next/babel","next/core-web-vitals"],
       // or whatever matches stories specified in .storybook/main.js
       "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
       "rules": {

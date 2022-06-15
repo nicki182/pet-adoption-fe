@@ -1,13 +1,11 @@
 
-import { useMemo,FC } from 'react';
-import ListTemplate from '@components/generic/templates/sections/ListTemplate';
-import AnimalCard from '@components/custom/cards/AnimalCard';
 import { AnimalCardTemplateProps } from '@components/generic/templates/cards/AnimalCardTemplate';
+import ListTemplate from '@components/generic/templates/sections/ListTemplate';
+import { FC,ReactNode } from 'react';
 interface AnimalListTemplateProps {
-    animals: AnimalCardTemplateProps[]
+    animals: ReactNode[]
 }
 const AnimalListTemplate:FC<AnimalListTemplateProps> = ({ animals }) => {
-    const items = useMemo(() => animals.map((animal,index) =><AnimalCard animal={animal} key={index}/>), [animals]);
-    return <ListTemplate items={items} listType="3-column" gap="small" />;
+    return <ListTemplate items={animals} listType="3-column" gap="small" />;
 };
 export default AnimalListTemplate;

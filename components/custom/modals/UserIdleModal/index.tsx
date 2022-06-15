@@ -15,7 +15,7 @@ import useSession from '@hooks/custom/useSession';
 const UserIdleModal:FC<GenericModalProps> = ({open,onClose}) => {
     const [isOpen, setIsOpen] = useState(false);
     const {count,pause,restart} = useCountdown(10)
-    const { userId } = useSelector(state=>state.session)
+    const { userId } = useSelector(state=>state.session || {userId:null})
     const {translate} = useTranslate({time:count})
     const {refreshToken, logout } = useSession()
     const handleOnClose = () =>onClose();

@@ -7,6 +7,7 @@ import Input from '@components/generic/inputs/Input';
 interface Props {
     templateFormProps:Omit<TemplateFormProps,"children">,
     onSubmit:(values?:unknown)=>Promise<void>
+    initialValues?:object
 }
 const schema = yup.object().shape({
     name:yup.string().required('This is Required'),
@@ -20,8 +21,8 @@ const schema = yup.object().shape({
     breed:yup.string(),
     type:yup.string(),
 })
-const AnimalForm:FC<Props> = ({templateFormProps,onSubmit}) =>{
-    return <Form schema={schema} onSubmit={onSubmit}>
+const AnimalForm:FC<Props> = ({templateFormProps,onSubmit,initialValues}) =>{
+    return <Form schema={schema} initialValues={initialValues} onSubmit={onSubmit}>
     <TemplateForm {...templateFormProps} >
         <ControllerForm name="name"
         render={
@@ -63,6 +64,7 @@ const AnimalForm:FC<Props> = ({templateFormProps,onSubmit}) =>{
             <ControllerForm name="hypollergenic"
         render={
         <TemplateInput.Checkbox
+        error=''
             checkboxProps={{label:'Hypollergenic'}}/>}/>
             <ControllerForm name="breed"
         render={

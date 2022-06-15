@@ -1,4 +1,5 @@
 import LoginRegister from '@components/custom/LoginRegister';
+import LogOut from '@components/custom/LogOut/index';
 const navPublic = [
     {
         href: '/',
@@ -33,7 +34,7 @@ const navPrivate = [
     },
     {
         isLink: false,
-        children:'Logout',
+        children:<LogOut/>,
         isLeft:false
     }
 ]

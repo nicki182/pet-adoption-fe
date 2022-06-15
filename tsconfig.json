@@ -27,6 +27,7 @@
       "@constants": ["constants"],
       "@reduxSession/*": ["redux/session/*"],
       "@reduxUser/*": ["redux/user/*"],
+      "@graphQL/*": ["graphQL/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types.d.ts"],

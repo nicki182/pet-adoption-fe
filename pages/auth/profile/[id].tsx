@@ -1,8 +1,7 @@
+import UserProfile from "@components/views/UserProfile";
 const Profile = () =>{
     return (
-        <div>
-            <h1>Profile</h1>
-        </div>
+       <UserProfile />
     )
 }
 export default Profile;

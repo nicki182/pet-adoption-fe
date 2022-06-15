@@ -1,16 +1,16 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import AnimalListTemplate from '.';
+import AnimalList from '.';
 export default {
-  title: 'Custom/Templates/List/AnimalListTemplate',
-  component: AnimalListTemplate,
-} as ComponentMeta<typeof AnimalListTemplate>;
-const Template: ComponentStory<typeof AnimalListTemplate> = (args) =>(
-<AnimalListTemplate {...args} />
+  title: 'Custom/List/AnimalList',
+  component: AnimalList,
+} as ComponentMeta<typeof AnimalList>;
+const Template: ComponentStory<typeof AnimalList> = (args) =>(
+<AnimalList {...args} />
 )
 ;
 
-export const AnimalListTemplateExample = Template.bind({});
-AnimalListTemplateExample.args = {
+export const AnimalListExample = Template.bind({});
+AnimalListExample.args = {
     animals:[ {
         age: 1,
         disabledSave:true,

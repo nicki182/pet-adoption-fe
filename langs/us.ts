@@ -6,10 +6,13 @@ export default {
   [Constants.LOGOUT]: 'Logout',
   [Constants.REGISTER]: 'Register',
   [Constants.CONFIRM]: 'Confirm',
-  [Constants.NEED_LOGIN]:'Don\'t have an account?<span style="color:#1EAFC2;"> Register<span>',
-  [Constants.NEED_REGISTER]:'Have an account? <span style="color:#1EAFC2;">Login<span>',
-  [Constants.WARNING_PLEASE_CONFIRM_IN]:'Please confirm in ${time} seconds',
-  [Constants.WARNING_IDLE_MESSAGE]: 'You have been idle for too long. Please log in again.',
+  [Constants.NEED_LOGIN]:
+    'Don\'t have an account?<span style="color:#1EAFC2;"> Register<span>',
+  [Constants.NEED_REGISTER]:
+    'Have an account? <span style="color:#1EAFC2;">Login<span>',
+  [Constants.WARNING_PLEASE_CONFIRM_IN]: 'Please confirm in ${time} seconds',
+  [Constants.WARNING_IDLE_MESSAGE]:
+    'You have been idle for too long. Please log in again.',
   [Constants.WARNING_IDLE_TITLE]: 'Warning',
   [Constants.TYPE]: 'Type',
   [Constants.BREED]: 'Breed',

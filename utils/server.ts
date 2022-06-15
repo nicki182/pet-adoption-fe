@@ -15,23 +15,22 @@ export const removeCookie = (res: NextApiResponse, name: string) => {
   res.setHeader('Set-Cookie', cookie);
 };
 export const setCookie = (
-  res: NextApiResponse<{data:Session}>,
+  res: NextApiResponse<{ data: Session }>,
   name: string,
   value: Session,
   options: CookieSerializeOptions = {}
 ) => {
-  
   res.setHeader('Set-Cookie', serialize(name, value.accessToken, options));
 };
 
 export const requestFromServer = async (
   type: 'post' | 'get',
   url: string,
-values?: string
+  values?: string
 ) => {
   try {
     const response = await axios[type](getURL(url), {
-      ...values?JSON.parse(values):{},
+      ...(values ? JSON.parse(values) : {}),
     });
     if (response.status !== 200) throw new Error(response.data);
     return response.data;
@@ -39,10 +38,14 @@ values?: string
     serverError(e);
   }
 };
-export const sendDataApi = async (values:object,url:string,config:object)=>{
-    const response = await fetch(url,{
-        ...config,
-        body:JSON.stringify({...values})
-        })  
-    return  response.json()
-  }
+export const sendDataApi = async (
+  values: object,
+  url: string,
+  config: object
+) => {
+  const response = await fetch(url, {
+    ...config,
+    body: JSON.stringify({ ...values }),
+  });
+  return response.json();
+};

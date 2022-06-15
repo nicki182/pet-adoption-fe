@@ -1,6 +1,6 @@
-export interface UserI{
-    id:string,
-    name?:string,
-    email?:string,
-    phoneNumber?:string,
-  }
+export interface UserI {
+  id: string;
+  name?: string;
+  email?: string;
+  phoneNumber?: string;
+}
