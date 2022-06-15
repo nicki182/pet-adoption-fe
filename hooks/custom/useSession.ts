@@ -28,13 +28,14 @@ const useSession = () => {
     router.replace('/');
   };
   const signUp = async (values) => {
-    const response = await sendDataApi(values, '/api/signup', {
+    const response = await sendDataApi(values, 'api/signUp', {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, *cors, same-origin
       cache: 'no-cache',
     });
+    console.log('aca estoy',response)
     dispatch(addSession(response));
-    router.push('/auth/petList');
+    router.replace('/auth/petList');
   };
   const refreshToken = async (userId: string) => {
     const response = await sendDataApi({ userId }, '/api/refresh', {

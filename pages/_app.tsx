@@ -13,12 +13,12 @@ import { navPublic,navPrivate } from '../constants'
 import useUserInteractionTracker from '../hooks/generic/useUserInteractionTracker'
 import useStore from '../redux/store'
 import theme from '../theme'
+import Auth from '@components/custom/Auth'
 import { ApolloProvider } from '@apollo/client'
 import client from '../graphQL';
 export default function MyApp({ Component, pageProps }: AppProps) {
   const store = useStore(pageProps.initialReduxState)
   const [open, setOpen] = useState<boolean>(false)
-  const auth = useAuthentication((pageProps.initialReduxState || {}).user,(pageProps.initialReduxState || {}).session)
   const checkIfIsActive =async (isActive:boolean)=>{
     setOpen(!isActive && auth.isAuthenticated)
   }
@@ -36,8 +36,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Provider store={store}>
       <PersistGate loading={<div>loading...</div>} persistor={persistor}>
       <ThemeProvider theme={theme}>
-        <NavBar items={auth.isAuthenticated?navPrivate:navPublic}/>
+        <Auth>
         <Component {...pageProps} />
+        </Auth>
        <Footer/>
        <UserIdleModal open={open} onClose={()=>setOpen(false)} />
       </ThemeProvider>

@@ -8,7 +8,7 @@ interface Props {
 }
 const ConfirmPassword:FC<Props> = ({onCancel,onFinish})=>{
     const onSubmit =async (values:object)=>{
-    console.log('values',values);
+    //console.log('values',values);
     await onFinish(values)
 }
     return <ConfirmPasswordForm

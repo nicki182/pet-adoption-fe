@@ -21,6 +21,7 @@ export const reducer = (
     ...SessionReducer,
     ...UserReducer,
   };
+  console.log(type,state);
   return reducers[type] ? reducers[type](state, action) : state;
 };
 const persistConfig = {

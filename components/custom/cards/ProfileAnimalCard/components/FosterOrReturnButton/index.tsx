@@ -7,7 +7,7 @@ interface Props {
 }
 const FosterOrReturnButton:FC<Props> = ({isFoster}) => {
     const onClick = () => {
-        console.log('isFoster',isFoster);
+        //console.log('isFoster',isFoster);
     }
     return <SecondaryButton onClick={onClick}>{isFoster ? 'Return' : 'Foster'}</SecondaryButton>
 }

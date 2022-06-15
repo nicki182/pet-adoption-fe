@@ -43,6 +43,7 @@ export const sendDataApi = async (
   url: string,
   config: object
 ) => {
+  console.log(values)
   const response = await fetch(url, {
     ...config,
     body: JSON.stringify({ ...values }),

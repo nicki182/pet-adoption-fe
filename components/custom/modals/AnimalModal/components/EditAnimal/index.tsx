@@ -10,7 +10,7 @@ interface Props {
 }
 const EditAnimal:FC<Props> = ({initialValues,onCancel,onFinish}) => {
     const onSubmit = async (values: any) => {
-        console.log(values);
+        //console.log(values);
         onFinish && onFinish(values);
     }
     return <AnimalForm

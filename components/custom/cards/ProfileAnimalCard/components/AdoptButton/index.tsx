@@ -6,7 +6,7 @@ interface Props {
 }
 const AdoptButton:FC<Props> = ({animal}) => {
     const onClick = () => {
-        console.log('adopt',animal);
+        //console.log('adopt',animal);
     }
     return <PrimaryButton onClick={onClick}>Adopt</PrimaryButton>;
     }
